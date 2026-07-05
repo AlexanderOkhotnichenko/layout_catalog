@@ -5,14 +5,22 @@
   background-color: $color-white;
   border: 1px solid $color-gray-border;
   border-radius: 5px;
-  width: 200px;
+  width: $card-width;
   padding: 16px;
   transition: transform 0.3s;
+
+  &__title {
+    @include text-style(12px, 500, 150%, $color-main-accent);
+
+    padding-top: 40px;
+    margin: 0;
+    transition: color 0.3s;
+  }
 
   &:hover {
     transform: scale(1.2);
 
-    &__title {
+    .card__title {
       color: $color-card-hover;
     }
   }
@@ -25,13 +33,7 @@
     margin: 16px auto 0;
     object-fit: cover;
   }
-  &__title {
-    @include text-style(12px, 500, 150%, $color-main-accent);
 
-    padding-top: 40px;
-    margin: 0;
-    transition: color 0.3s;
-  }
   &__product-code {
     @include text-style(10px, 400, 140%, $color-secondary);
 
@@ -39,33 +41,39 @@
     width: 100%;
     margin: 0;
   }
+
   &__rating {
     @include flex-between;
 
     padding-top: 16px;
     width: 100%;
   }
+
   &__reviews-count {
     @include text-style(10px, 400, 140%, $color-main-accent);
 
     display: block;
   }
+
   &__price-container {
     @include flex-between;
 
     width: 100%;
     padding-top: 24px;
   }
+
   &__price-label {
     @include text-style(12px, 400, 150%, $color-secondary);
 
     display: block;
   }
+
   &__price-value {
     @include text-style(16px, 700, 113%, $color-main-accent);
 
     display: block;
   }
+
   &__link {
     @include text-style(14px, 700, 40px, $color-white);
 
@@ -80,7 +88,9 @@
     border-radius: 5px;
     background-color: $color-blue-accent;
     box-sizing: border-box;
-    transition: color 0.3s;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
 
     &:hover {
       background-color: $color-white;
